@@ -1,6 +1,14 @@
 import os
 import pygetwindow 
 import time
+import json as js
+
+def domain(code:str):
+    with open("google-domains.json","r+",encoding="utf-8") as file:
+        countrys = js.load(file)
+    for country in countrys:
+        if code == country["country_code"]:
+            return country["domain"]
 
 def param_taker(questions:list):
     #* the question file creating and writing of questions
@@ -33,18 +41,20 @@ def param_taker(questions:list):
     os.remove("questions.txt")
     return question_lines
 
+countrys = "https://serpapi.com/google-domains"
     
 def Immersive_Products_parameters() -> dict:
-    questions = ["What do you want to search","Which country will be use(countrys codes-dont write dot-;https://serpapi.com/google-domains)"]
+    questions = ["What do you want to search ",f"Which country will be use(country codes-dont write dot-;{countrys}) "]
     answers = param_taker(questions=questions)
     params = {
-        "q":answers[0],
-        "google_domain":answers[1],
+        "q":"+".join(answers[0].split(" ")),
+        "google_domain":domain(answers[1].lower()),
+        "engine":"google",
+        "safe":"active",
+        "device":"desktop"
         }
     return params
 
-x = Immersive_Products_parameters()
-print(x)
 """
 default:
 -engine
@@ -59,3 +69,65 @@ optional
 
 
 
+def Jobs_parameters() -> dict:
+    questions = ["Which job do you want to search ",f"Which country will be use(countrys codes-dont write dot-;{countrys}) "]
+    answers = param_taker(questions=questions)
+    params = {
+        "q":"+".join(answers[0].split(" ")),
+        "google_domain":domain(answers[1].lower()),
+        "engine":"google_jobs",
+        "safe":"active",
+        "device":"desktop"
+        }
+    return params
+
+
+def Grammar_Check_parameters() -> dict:
+    questions = ["What grammer do you want to check",f"Which country will be use(countrys codes-dont write dot-;{countrys})"]
+    answers = param_taker(questions=questions)
+    params = {
+        "q": "+".join(answers[0].split(" ")) +".+grammar+check",
+        "google_domain":domain(answers[1].lower()),
+        "engine":"google",
+        "device":"desktop"
+        }
+    return params
+
+
+def Nutrition_Information_parameters() -> dict:
+    questions = ["What do you want to search",f"Which country will be use(countrys codes-dont write dot-;{countrys})"]
+    answers = param_taker(questions=questions)
+    params = {
+        "q": "+".join(answers[0].split(" ")),
+        "google_domain":domain(answers[1].lower()),
+        "engine":"google",
+        "safe":"active",
+        "device":"desktop"
+        }
+    return params
+
+
+
+def Popular_Destinations_parameters() -> dict:
+    questions = ["What do you want to search",f"Which country will be use(countrys codes-dont write dot-;{countrys})"]
+    answers = param_taker(questions=questions)
+    params = {
+        "q": "+".join(answers[0].split(" ")) +"+Destinations",
+        "google_domain":domain(answers[1].lower()),
+        "engine":"google",
+        "safe":"active",
+        "device":"desktop"
+        }
+    return params
+#t destination parametreleri ve soruları ayarlanıcak
+
+def Courses_parameters() -> dict:
+    questions = ["What do you want to search",f"Which country will be use(countrys codes-dont write dot-;{countrys})"]
+    answers = param_taker(questions=questions)
+    params = {
+        "q":answers[0],
+        "google_domain":answers[1].lower()
+        }
+    return params
+
+#t kullanıcının girdiği ülke verisi uygunmu diye control edilecek
