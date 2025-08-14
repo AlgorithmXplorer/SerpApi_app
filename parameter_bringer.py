@@ -109,7 +109,7 @@ def Nutrition_Information_parameters() -> dict:
 
 
 def Popular_Destinations_parameters() -> dict:
-    questions = ["What do you want to search",f"Which country will be use(countrys codes-dont write dot-;{countrys})"]
+    questions = ["What do you want to search for a trip",f"Which country will be use(countrys codes-dont write dot-;{countrys})"]
     answers = param_taker(questions=questions)
     params = {
         "q": "+".join(answers[0].split(" ")) +"+Destinations",
@@ -120,14 +120,18 @@ def Popular_Destinations_parameters() -> dict:
         }
     return params
 #t destination parametreleri ve soruları ayarlanıcak
-
 def Courses_parameters() -> dict:
-    questions = ["What do you want to search",f"Which country will be use(countrys codes-dont write dot-;{countrys})"]
+    questions = ["What course do you want to search ",f"Which country will be use(countrys codes-dont write dot-;{countrys})"]
     answers = param_taker(questions=questions)
     params = {
-        "q":answers[0],
-        "google_domain":answers[1].lower()
+        "q": "+".join(answers[0].split(" ")) +"+course",
+        "google_domain":domain(answers[1].lower()),
+        "engine":"google",
+        "safe":"active",
+        "device":"desktop"
         }
     return params
+x = Courses_parameters()
+print(x)
 
 #t kullanıcının girdiği ülke verisi uygunmu diye control edilecek
