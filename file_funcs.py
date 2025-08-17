@@ -39,6 +39,7 @@ def param_taker(questions:list):
     os.remove("questions.txt")
     question_lines = [line.split(":")[-1] for line in question_lines]
     question_lines = [line[:-1] for line in question_lines]
+    question_lines = [line.lower() for line in question_lines]
     question_lines = [line.strip(" ") for line in question_lines]
     question_lines = [line if line != "" else None for line in question_lines ]
     return question_lines
