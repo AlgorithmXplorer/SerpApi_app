@@ -1,5 +1,6 @@
 
 import requests as rq
+from parameter_bringer import Immersive_Products_parameters
 import json as js
 
 class Immersive_Products:
@@ -23,7 +24,6 @@ class Immersive_Products:
 
     def clear_data_maker(self):
         clear_versions = []
-        print(self.datas)
 
         try:
             datas = js.loads(self.datas)["immersive_products"]
