@@ -1,6 +1,5 @@
 
 import requests as rq
-from parameter_bringer import Immersive_Products_parameters
 import json as js
 
 class Immersive_Products:

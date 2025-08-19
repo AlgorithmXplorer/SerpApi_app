@@ -70,11 +70,7 @@ def Popular_Destinations_parameters(param_taker , domain_setter ) -> dict:
 
 
 
-<<<<<<< HEAD
 def Courses_parameters(param_taker, domain_setter ) -> dict:
-=======
-def Courses_parameters() -> dict:
->>>>>>> feat/Immersive_Products_class
     questions = ["What course do you want to search ",f"Which country will be use(countrys codes-dont write dot-;{countrys_url})"]
     answers = param_taker(questions=questions)
     params = {
