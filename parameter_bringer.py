@@ -22,7 +22,6 @@ def Jobs_parameters(param_taker , domain_setter ) -> dict:
         "q":"+".join(answers[0].split(" ")),
         "google_domain":domain_setter(answers[1].lower()),
         "engine":"google_jobs",
-        "start":"20",
         "safe":"active",
         "device":"desktop"
         }

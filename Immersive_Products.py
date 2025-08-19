@@ -23,6 +23,8 @@ class Immersive_Products:
 
     def clear_data_maker(self):
         clear_versions = []
+        print(self.url)
+        print(self.datas)
 
         try:
             datas = js.loads(self.datas)["immersive_products"]
@@ -31,6 +33,20 @@ class Immersive_Products:
                 datas = js.loads(self.datas)["shopping_results"]
             except KeyError:
                 datas = js.loads(self.datas)["organic_results"]
+                for product in datas:
+                    str_infos = product["title"] + "\n"
+                    try:
+                        str_infos = str_infos + f"PRİCE: {product['rich_snippet']['price']}{product['rich_snippet']['currency']}" + "\n"
+                    except KeyError:
+                        str_infos = str_infos + f"PRİCE: UNKNOW"+ "\n"
+                    try:
+                        str_infos = str_infos + f"RATİNG: {product['rating']}" + "\n"
+                    except KeyError:
+                        str_infos = str_infos + f"RATİNG: UNKNOW"+ "\n"
+                    str_infos = str_infos + f"SOURCE: {product['source']}"
+                    clear_versions.append(str_infos)
+                    return f"\n{'-'*40}\n".join(clear_versions)
+
 
         for product in datas:
             str_infos = product["title"] + "\n"
