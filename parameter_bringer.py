@@ -26,7 +26,10 @@ def Jobs_parameters(param_taker , domain_setter ) -> dict:
         "device":"desktop"
         }
     return params
-
+def job_count(param_taker):
+    questions = ["How many jobs do you want to recive "]
+    answer = param_taker(questions=questions)
+    return int(answer[0])
 
 def Grammar_Check_parameters(param_taker , domain_setter ) -> dict:
     questions = ["What grammer do you want to check",f"Which country will be use(countrys codes-dont write dot-;{countrys_url})"]
