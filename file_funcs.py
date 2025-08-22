@@ -18,7 +18,7 @@ def param_taker(questions:list):
     #* the question file creating and writing of questions
     questions = [ques + ":" for ques in questions]
 
-    with open("questions.txt","a",encoding="utf-8") as file:
+    with open("questions.txt","w",encoding="utf-8") as file:
         for question in questions:
             file.write(question+"\n")
         

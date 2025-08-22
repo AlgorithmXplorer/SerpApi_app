@@ -16,7 +16,8 @@ params = Jobs_parameters(param_taker=param_taker,domain_setter=domain_setter)
 job_count = job_count(param_taker=param_taker)
 obje = Jobs_apı(params=params,job_count=job_count)
 obje.url_maker()
-print(obje.url)
+obje.data_taker()
+obje.data_count_controller()
 print(obje.job_count)
 
 
