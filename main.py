@@ -18,6 +18,10 @@ obje = Jobs_apı(params=params,job_count=job_count)
 obje.url_maker()
 obje.data_taker()
 obje.data_count_controller()
+datas = obje.clear_data_maker()
+data_writer(datas=datas)
+
+
 print(obje.job_count)
 
 

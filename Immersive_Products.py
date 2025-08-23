@@ -23,9 +23,7 @@ class Immersive_Products:
 
     def clear_data_maker(self):
         clear_versions = []
-        print(self.url)
-        print(self.datas)
-
+        
         try:
             datas = js.loads(self.datas)["immersive_products"]
         except KeyError:
