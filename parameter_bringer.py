@@ -15,6 +15,8 @@ def Immersive_Products_parameters(param_taker , domain_setter) -> dict:
         }
     return params
 
+
+
 def Jobs_parameters(param_taker , domain_setter ) -> dict:
     questions = ["Which job do you want to search ",f"Which country will be use(countrys codes-dont write dot-;{countrys_url}) "]
     answers = param_taker(questions=questions)
@@ -31,16 +33,18 @@ def job_count(param_taker):
     answer = param_taker(questions=questions)
     return int(answer[0])
 
-def Grammar_Check_parameters(param_taker , domain_setter ) -> dict:
-    questions = ["What grammer do you want to check",f"Which country will be use(countrys codes-dont write dot-;{countrys_url})"]
+
+
+def News_parameters(param_taker , domain_setter ) -> dict:
+    questions = ["What do you want to search to news ",f"Which country will be use(countrys codes-dont write dot-;{countrys_url})"]
     answers = param_taker(questions=questions)
     params = {
-        "q": "+".join(answers[0].split(" ")) +".+grammar+check",
-        "google_domain":domain_setter(answers[1].lower()),
-        "engine":"google",
-        "device":"desktop"
+        "q":"+".join(answers[0].split(" ")),
+        "gl":domain_setter(answers[1].lower(),only_country=True),
+        "engine":"google_news",
         }
     return params
+
 
 
 def Nutrition_Information_parameters(param_taker , domain_setter ) -> dict:
@@ -57,6 +61,7 @@ def Nutrition_Information_parameters(param_taker , domain_setter ) -> dict:
 
 
 
+
 def Popular_Destinations_parameters(param_taker , domain_setter ) -> dict:
     questions = ["What do you want to search for a trip",f"Which country will be use(countrys codes-dont write dot-;{countrys_url})"]
     answers = param_taker(questions=questions)
@@ -69,6 +74,7 @@ def Popular_Destinations_parameters(param_taker , domain_setter ) -> dict:
         "device":"desktop"
         }
     return params
+
 
 
 

@@ -4,13 +4,17 @@ import json as js
 import time
 
 
-def domain_setter(code:str):
+def domain_setter(code:str,only_country=False):
     with open("google-domains.json","r+",encoding="utf-8") as file:
         countrys = js.load(file)
 
     for country in countrys:
-        if code == country["country_code"]:
-            return country["domain"]
+        if code == country["country_code"] :
+          if only_country:
+                return country["country_code"]
+          else:
+                return country["domain"]
+              
 
 
 
@@ -49,6 +53,8 @@ def param_taker(questions:list):
     question_lines = [line.strip(" ") for line in question_lines]
     question_lines = [line if line != "" else None for line in question_lines ]
     return question_lines
+
+
 
 def data_writer(datas:str):
     #* gelen dataları oluşturulan dosyaya yazdırıcak
