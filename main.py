@@ -26,6 +26,8 @@ from News_api_service import *
 params = News_parameters(param_taker=param_taker,domain_setter=domain_setter)
 obje = news_api(params=params)
 obje.url_maker()
-# obje.data_taker()
+obje.data_taker()
+print(obje.datas)
+print(len(obje.datas))
 print(obje.url)
 
