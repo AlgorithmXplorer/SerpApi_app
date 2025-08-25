@@ -59,7 +59,7 @@ class Immersive_Products:
             str_infos = str_infos + f"SOURCE: {product['source']}"
             clear_versions.append(str_infos)
 
-        return f"\n{'-'*40}\n".join(clear_versions)
+        return f"\n\n{'-'*40}\n\n".join(clear_versions)
 
         
 

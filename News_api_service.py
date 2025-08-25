@@ -5,7 +5,7 @@ class news_api:
     def __init__(self,params:dict):
         self.params = params
         self.url:str = None
-        self.datas = None
+        self.datas:list[dict] = None
         self.json = None
 
     def url_maker(self):
@@ -45,7 +45,7 @@ class news_api:
 
             try: 
                 news_params.update({
-                    "Release Date" : news["date"].split(", ")[0]
+                    "Release Date" : " - ".join(news["date"].split(", ")[0:2])
                 })
             except:
                 news_params.update({
@@ -63,11 +63,18 @@ class news_api:
                 neccessary_params.append(params)
         self.datas = neccessary_params
 
-    #t alınacak olan parametreler
-    #! NOTE:Çok nadir olsada bazıları birden fazla haber anlatıyor . bunlarıda "stories" key altında veriyor. ama çok nadir yani 94 tane içinde 4 tane falan var
-    #* title
-    #* link
-    #* source["name"]
-    #* source["authors"]
-    #* date
-    #* herbirinde title ve link kesin var
+    def clear_data_maker(self):
+        clear_datas = []
+
+        for news in self.datas:
+            str_key_value = [f"{key} : {value} " for key , value in news.items()]
+            join_param = "\n".join(str_key_value) 
+            clear_datas.append(join_param)
+            
+        return f"\n\n{'-'*40}\n\n".join(clear_datas)
+
+
+
+
+
+

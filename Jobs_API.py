@@ -92,15 +92,5 @@ class Jobs_apı:
             temp = [f"{key} : {value}"for key,value in job.items()] 
             clear_data.append("\n\n".join(temp))
             
-        return f"\n\n\n{'-' * 40}\n\n\n".join(clear_data)
-    
-    #t data_taker ve job count funcs ile alınan verileri clear_data_maker ile düzgün hale getiricez
-    #t yazılcak iş parametreleri
-    #* title
-    #*location
-    #*company_name
-    #*extensions
-    #* detected_extensions[salary - schedule_type ]
-    #* description
-
+        return f"\n\n{'-' * 40}\n\n".join(clear_data)
 
