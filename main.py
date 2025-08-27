@@ -34,4 +34,6 @@ from Nutrition_Information_api_service import *
 params = Nutrition_Information_param_taker(param_taker=param_taker,domain_setter=domain_setter)
 obje = Nutrition_Information_api(params=params)
 obje.url_maker()
+obje.datas_taker()
+
 print(obje.url)
