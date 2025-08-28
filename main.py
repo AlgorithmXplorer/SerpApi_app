@@ -23,17 +23,18 @@ from Nutrition_Information_api_service import *
 # data_writer(datas=datas)
 # print(obje.job_count)
 
-# params = News_parameters(param_taker=param_taker,domain_setter=domain_setter)
+# params = News_param_taker(param_taker=param_taker,domain_setter=domain_setter)
 # obje = news_api(params=params)
 # obje.url_maker()
+# print(obje.url)
 # obje.data_taker()
 # datas = obje.clear_data_maker()
-# data_writer(datas=datas)
-# print(obje.url)
+# data_writer(datas=datas,params=obje.params)
 
 params = Nutrition_Information_param_taker(param_taker=param_taker,domain_setter=domain_setter)
 obje = Nutrition_Information_api(params=params)
 obje.url_maker()
-obje.datas_taker()
-
 print(obje.url)
+obje.datas_taker()
+datas = obje.clear_data_maker()
+data_writer(datas=datas,params=obje.params)

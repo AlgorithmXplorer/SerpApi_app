@@ -25,14 +25,41 @@ class Nutrition_Information_api:
             self.datas = None
 
     def clear_data_maker(self):
+        clear_data = []
+        
         def tryer_func(will_search:str):
-            pass
-    #t yazılacak parametreler
-    #* description
-    #* calories
-    #* amount_per
-    #* source
-    #* source_link
-    #* protein
-    #* total_fat
-    #* total_carbohydrate
+            try:    
+                data = self.datas[will_search]
+                if type(data) == list:
+                    return f"{will_search.capitalize()} : {' , '.join(data)}"
+                else:
+                    return f"{will_search.capitalize()} : {data}"
+            except:
+                return f"{will_search.capitalize()} : UNKNOWN"
+
+        descp = tryer_func("description")
+        clear_data.append(descp)
+
+        calories = tryer_func("calories")
+        clear_data.append(calories)
+
+        amount_per = tryer_func("amount_per")
+        clear_data.append(amount_per)
+
+        source = tryer_func("source")
+        clear_data.append(source)
+
+        source_link = tryer_func("source_link")
+        clear_data.append(source_link)
+
+        protein = tryer_func("protein")
+        clear_data.append(protein)
+
+        total_fat = tryer_func("total_fat")
+        clear_data.append(total_fat)
+
+        total_carbohydrate = tryer_func("total_carbohydrate")
+        clear_data.append(total_carbohydrate)
+
+        return f"\n\n{'-'*40}\n\n".join(clear_data)
+

@@ -56,9 +56,17 @@ def param_taker(questions:list):
 
 
 
-def data_writer(datas:str):
+def data_writer(datas:str, params:dict):
     #* gelen dataları oluşturulan dosyaya yazdırıcak
+    str_params = [f"Searched topic = {params['q']}"]
+    if "google_domain" in params.keys():
+        str_params.append(f"Location = {params['google_domain']}")
+    else:
+        str_params.append(f"Location = {params['gl']}")
+    message = "*"*20 +"\n"+"PARAMS"+"\n"+"\n".join(str_params) +"\n"+ "*"*20 +"\n\n" 
+
     with open("temp_file.txt","w",encoding="utf-8") as file:
+        file.write(message)
         file.write(datas)
     
 
