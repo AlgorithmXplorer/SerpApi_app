@@ -35,11 +35,12 @@ from Popular_Destinations_api_service import *
 
 
 params = Popular_Destinations_parameters(param_taker=param_taker,domain_setter=domain_setter)
-obje = Popular_Destinations_api(params=params)
+dest_count = count_Destination(param_taker=param_taker)
+obje = Popular_Destinations_api(params=params , destination_count=dest_count)
 obje.url_maker()
+obje.data_taker()
 
-
-print(obje.url)
+obje.data_count()
 
 
 
