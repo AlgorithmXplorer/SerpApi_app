@@ -39,9 +39,11 @@ dest_count = count_Destination(param_taker=param_taker)
 obje = Popular_Destinations_api(params=params , destination_count=dest_count)
 obje.url_maker()
 obje.data_taker()
-
 obje.data_count()
-
+datas = obje.clear_data_maker()
+data_writer(datas=datas)
+print(len(obje.datas))
+print(obje.url)
 
 
 
