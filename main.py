@@ -3,7 +3,7 @@ from Jobs_API import *
 from file_funcs import *
 from parameter_bringer import *
 from News_api_service import *
-
+from courses_API_service import *
 
 
 # params = Immersive_Products_parameters(param_taker=param_taker , domain_setter= domain_setter)
@@ -23,11 +23,20 @@ from News_api_service import *
 # data_writer(datas=datas)
 # print(obje.job_count)
 
-params = News_parameters(param_taker=param_taker,domain_setter=domain_setter)
-obje = news_api(params=params)
+# params = News_parameters(param_taker=param_taker,domain_setter=domain_setter)
+# obje = news_api(params=params)
+# obje.url_maker()
+# obje.data_taker()
+# datas = obje.clear_data_maker()
+# data_writer(datas=datas)
+# print(obje.url)
+
+params = Courses_parameters(param_taker=param_taker,domain_setter=domain_setter)
+obje = courses_api(params=params)
 obje.url_maker()
-obje.data_taker()
-datas = obje.clear_data_maker()
-data_writer(datas=datas)
+
+
 print(obje.url)
+
+
 
