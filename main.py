@@ -32,10 +32,14 @@ from courses_API_service import *
 # print(obje.url)
 
 params = Courses_parameters(param_taker=param_taker,domain_setter=domain_setter)
-obje = courses_api(params=params)
+count = course_count(param_taker=param_taker)
+obje = courses_api(params=params,course_count=count)
 obje.url_maker()
+obje.data_taker()
+obje.count_controller()
 
-
+print(obje.datas)
+print(len(obje.datas))
 print(obje.url)
 
 

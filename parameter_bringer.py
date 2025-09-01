@@ -85,10 +85,12 @@ def Courses_parameters(param_taker, domain_setter ) -> dict:
         "q": "+".join(answers[0].split(" ")) +"+course",
         "google_domain":domain_setter(answers[1].lower()),
         "engine":"google",
-        "start":"20",
         "safe":"active",
         "device":"desktop"
         }
     return params
+def course_count(param_taker):
+    answer = param_taker(questions = ["How many course do you want "])
+    return int(answer[0])
 
 
