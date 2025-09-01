@@ -5,7 +5,7 @@ import time
 
 class Popular_Destinations_api:
     def __init__(self,params, destination_count):
-        self.params:int = params
+        self.params:dict = params
         self.json:dict = None
         self.url:str = None
         self.datas:list[dict] = None
@@ -17,10 +17,6 @@ class Popular_Destinations_api:
             self.url = datas["url"] + f"api_key={datas['api_key']}&"
         str_params = [f"{key}={value}" for key , value in self.params.items()]
         self.url += "&".join(str_params)
-
-    #t iş api servisinde olduğu gibi burdada birden fazla sayfa linki var.
-    #! ayrıca bu iki servise yeterli sayıda veri gelmezse elde olanları çıktı edip alta mesaj yaz
-    #! mesela: anca bu kadar veri çıktı
 
     def data_taker(self,is_it_enough = True):
             def organic():

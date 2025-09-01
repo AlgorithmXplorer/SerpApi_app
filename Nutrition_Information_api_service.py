@@ -5,9 +5,9 @@ import requests
 class Nutrition_Information_api:
     def __init__(self,params):
         self.params:dict = params
-        self.url = None
-        self.datas = None
-        self.json = None
+        self.url:str = None
+        self.datas:list[dict] = None
+        self.json:dict = None
     
     def url_maker(self):
         with open("api_key/api.json","r+",encoding="utf-8") as file:

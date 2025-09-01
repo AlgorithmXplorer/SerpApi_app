@@ -9,7 +9,7 @@ class Jobs_apı:
         self.url = None
         self.json = None
         self.datas:list = None
-        self.job_count = job_count
+        self.job_count:int = job_count
 
     def url_maker(self):
         with open("api_key/api.json","r+",encoding="utf-8") as file: 
