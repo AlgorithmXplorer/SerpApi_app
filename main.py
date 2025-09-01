@@ -37,8 +37,9 @@ obje = courses_api(params=params,course_count=count)
 obje.url_maker()
 obje.data_taker()
 obje.count_controller()
+datas = obje.clear_data_maker()
+data_writer(datas=datas)
 
-print(obje.datas)
 print(len(obje.datas))
 print(obje.url)
 

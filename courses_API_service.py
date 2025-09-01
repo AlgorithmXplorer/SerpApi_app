@@ -49,7 +49,15 @@ class courses_api:
 
             self.url = self.json["serpapi_pagination"]["next_link"] + api_key
             self.data_taker(extra_data=True)
-            
+    
+    def clear_data_maker(self) -> str:
+        self.datas = self.datas[:self.course_count]
+        clear_data = []
+        for data in self.datas:
+            params = [f"{key} : {value}" for key , value in data.items()]
+            params = "\n".join(params)
+            clear_data.append(params)
+        return  f"\n\n{'-'*40}\n\n".join(clear_data)
 
 
 
