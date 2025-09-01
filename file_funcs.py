@@ -18,7 +18,7 @@ def domain_setter(code:str,only_country=False):
 
 
 
-def param_taker(questions:list):
+def param_taker(questions:list) -> list:
     #* the question file creating and writing of questions
     questions = [ques + ":" for ques in questions]
 

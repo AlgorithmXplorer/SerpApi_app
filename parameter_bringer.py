@@ -61,20 +61,20 @@ def Nutrition_Information_param_taker(param_taker , domain_setter ) -> dict:
 
 
 
-
-def Popular_Destinations_param_taker(param_taker , domain_setter ) -> dict:
-    questions = ["What do you want to search for a trip",f"Which country will be use(countrys codes-dont write dot-;{countrys_url})"]
+def Popular_Destinations_parameters(param_taker , domain_setter ) -> dict:
+    questions = ["What city do you want to search for destinations ",f"Which country will be use(countrys codes-dont write dot-;{countrys_url})"]
     answers = param_taker(questions=questions)
     params = {
         "q": "+".join(answers[0].split(" ")) +"+Destinations",
         "google_domain":domain_setter(answers[1].lower()),
         "engine":"google",
         "safe":"active",
-        "start":"20",
         "device":"desktop"
         }
     return params
-
+def count_Destination(param_taker):
+    datas = param_taker(questions=["how many destination do you want "])
+    return int(datas[0])
 
 
 

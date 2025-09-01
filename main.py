@@ -5,6 +5,7 @@ from parameter_bringer import *
 from News_api_service import *
 from courses_API_service import *
 from Nutrition_Information_api_service import * 
+from Popular_Destinations_api_service import *
 
 
 # params = Immersive_Products_parameters(param_taker=param_taker , domain_setter= domain_setter)
@@ -32,18 +33,41 @@ from Nutrition_Information_api_service import *
 # data_writer(datas=datas)
 # print(obje.url)
 
-params = Courses_param_taker(param_taker=param_taker,domain_setter=domain_setter)
-count = course_count(param_taker=param_taker)
-obje = courses_api(params=params,course_count=count)
-obje.url_maker()
-obje.data_taker()
-obje.count_controller()
-datas = obje.clear_data_maker()
-data_writer(datas=datas)
-
-print(len(obje.datas))
-print(obje.url)
+# params = Courses_param_taker(param_taker=param_taker,domain_setter=domain_setter)
+# count = course_count(param_taker=param_taker)
+# obje = courses_api(params=params,course_count=count)
+# obje.url_maker()
+# obje.data_taker()
+# obje.count_controller()
+# datas = obje.clear_data_maker()
+# data_writer(datas=datas)
 
 
+# params = Nutrition_Information_param_taker(param_taker=param_taker,domain_setter=domain_setter)
+# obje = Nutrition_Information_api(params=params)
+# obje.url_maker()
+# print(obje.url)
+# obje.datas_taker()
+# datas = obje.clear_data_maker()
+# data_writer(datas=datas,params=obje.params)
 
-data_writer(datas=datas,params=obje.params)
+
+# params = Popular_Destinations_parameters(param_taker=param_taker,domain_setter=domain_setter)
+# dest_count = count_Destination(param_taker=param_taker)
+# obje = Popular_Destinations_api(params=params , destination_count=dest_count)
+# obje.url_maker()
+# obje.data_taker()
+# obje.count_controller()
+# obje.data_count()
+# datas = obje.clear_data_maker()
+# data_writer(datas=datas)
+
+# print(len(obje.datas))
+# print(len(obje.datas))
+# print(obje.url)
+
+
+
+
+
+# data_writer(datas=datas,params=obje.params)
