@@ -2,7 +2,7 @@
 countrys_url = "https://serpapi.com/google-domains"
     
 
-def Immersive_Products_parameters(param_taker , domain_setter) -> dict:
+def Immersive_Products_param_taker(param_taker , domain_setter) -> dict:
     questions = ["What product do you want to search ",f"Which country will be use(country codes-dont write dot-;{countrys_url}) "]
     answers = param_taker(questions=questions)
     params = {
@@ -17,7 +17,7 @@ def Immersive_Products_parameters(param_taker , domain_setter) -> dict:
 
 
 
-def Jobs_parameters(param_taker , domain_setter ) -> dict:
+def Jobs_param_taker(param_taker , domain_setter ) -> dict:
     questions = ["Which job do you want to search ",f"Which country will be use(countrys codes-dont write dot-;{countrys_url}) "]
     answers = param_taker(questions=questions)
     params = {
@@ -35,7 +35,7 @@ def job_count(param_taker):
 
 
 
-def News_parameters(param_taker , domain_setter ) -> dict:
+def News_param_taker(param_taker , domain_setter ) -> dict:
     questions = ["What do you want to search to news ",f"Which country will be use(countrys codes-dont write dot-;{countrys_url})"]
     answers = param_taker(questions=questions)
     params = {
@@ -47,7 +47,7 @@ def News_parameters(param_taker , domain_setter ) -> dict:
 
 
 
-def Nutrition_Information_parameters(param_taker , domain_setter ) -> dict:
+def Nutrition_Information_param_taker(param_taker , domain_setter ) -> dict:
     questions = ["What do you want to search for subject matter",f"Which country will be use(countrys codes-dont write dot-;{countrys_url})"]
     answers = param_taker(questions=questions)
     params = {
@@ -62,7 +62,7 @@ def Nutrition_Information_parameters(param_taker , domain_setter ) -> dict:
 
 
 
-def Popular_Destinations_parameters(param_taker , domain_setter ) -> dict:
+def Popular_Destinations_param_taker(param_taker , domain_setter ) -> dict:
     questions = ["What do you want to search for a trip",f"Which country will be use(countrys codes-dont write dot-;{countrys_url})"]
     answers = param_taker(questions=questions)
     params = {
@@ -78,7 +78,7 @@ def Popular_Destinations_parameters(param_taker , domain_setter ) -> dict:
 
 
 
-def Courses_parameters(param_taker, domain_setter ) -> dict:
+def Courses_param_taker(param_taker, domain_setter ) -> dict:
     questions = ["What course do you want to search ",f"Which country will be use(countrys codes-dont write dot-;{countrys_url})"]
     answers = param_taker(questions=questions)
     params = {

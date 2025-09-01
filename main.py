@@ -4,6 +4,7 @@ from file_funcs import *
 from parameter_bringer import *
 from News_api_service import *
 from courses_API_service import *
+from Nutrition_Information_api_service import * 
 
 
 # params = Immersive_Products_parameters(param_taker=param_taker , domain_setter= domain_setter)
@@ -31,7 +32,7 @@ from courses_API_service import *
 # data_writer(datas=datas)
 # print(obje.url)
 
-params = Courses_parameters(param_taker=param_taker,domain_setter=domain_setter)
+params = Courses_param_taker(param_taker=param_taker,domain_setter=domain_setter)
 count = course_count(param_taker=param_taker)
 obje = courses_api(params=params,course_count=count)
 obje.url_maker()
@@ -45,3 +46,4 @@ print(obje.url)
 
 
 
+data_writer(datas=datas,params=obje.params)
