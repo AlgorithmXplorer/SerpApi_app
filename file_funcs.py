@@ -38,7 +38,8 @@ def param_taker(questions:list) -> list:
                 break
 
         with open("questions.txt" ,"r+" , encoding="Utf-8") as file:
-            question_lines = file.readlines()[:len(questions)]
+            question_lines = file.readlines()[:-3]
+            
             
         return question_lines
     

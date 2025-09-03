@@ -2,7 +2,7 @@
 import requests as rq
 import json as js
 
-class Immersive_Products:
+class Immersive_Products_API:
     def __init__(self,parameters):
         self.params = parameters
         self.url = None
