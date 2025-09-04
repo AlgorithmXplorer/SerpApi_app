@@ -19,7 +19,7 @@ class Jobs_apı:
         str_params = [ f"{a}={i}" for a,i in self.params.items()]
         str_params = "&".join(str_params)
         self.url = url + str_params 
-        print(self.url)
+
 
     def data_taker(self,next_page_token=None):
         if next_page_token == None:  
@@ -42,6 +42,8 @@ class Jobs_apı:
             datas = self.data_taker(next_page_token=page_token)
         
             self.datas += datas
+            self.datas = self.datas[:self.job_count]
+        else:
             self.datas = self.datas[:self.job_count]
         
     

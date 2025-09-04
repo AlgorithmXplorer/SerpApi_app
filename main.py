@@ -1,3 +1,5 @@
+import time
+
 from file_funcs import *
 from parameter_bringer import *
 
@@ -15,8 +17,30 @@ class main:
         self.domain_setter_func = domain_setter_func
 
     def panel(self):
-        panel_questions = ""
-        
+        panel_questions = "1-Immersive Products API service \n2-Jobs API service \n3-News API service\n4-Nutrition Information API service\n5-Popular Destinations API service\n6-Courses API service\nWhich api service do you want(Enter 'q' if you want to quit the app) "
+        choice = str(self.param_taker_func(questions=[panel_questions])[-1])
+
+        if choice == "q":
+            print("QUİTİNG THE APP")
+
+        elif choice not in [str(i) for i in list(range(1,7)) ]:
+            with open("error.txt","w",encoding="utf-8") as file:
+                file.write("PLEASE ENTER YOUR CHOİCE CORRECTLY")
+            self.panel()
+
+        elif choice == "1":
+            self.Immersive_Products()
+        elif choice == "2":
+            self.Jobs()
+        elif choice == "3":
+            self.News()
+        elif choice == "4":
+            self.Nutrition_Information()
+        elif choice == "5":
+            self.Popular_Destinations()
+        elif choice == "6":
+            self.Courses()
+
         
 
     def Immersive_Products(self):
@@ -29,7 +53,9 @@ class main:
         datas = obje.clear_data_maker()
         self.data_writter_func(datas=datas,params=obje.params)
         
-        self.panel
+        time.sleep(3)
+
+        self.panel()
     
     
     def Jobs(self):
@@ -44,7 +70,9 @@ class main:
         datas = obje.clear_data_maker()
         self.data_writter_func(datas=datas,params=obje.params)
         
-        self.panel
+        time.sleep(3)
+        
+        self.panel()
     
     
     def News(self):
@@ -56,8 +84,10 @@ class main:
         
         datas = obje.clear_data_maker()
         self.data_writter_func(datas=datas,params=obje.params)
+        
+        time.sleep(3)
                 
-        self.panel
+        self.panel()
     
     
     def Nutrition_Information(self):
@@ -65,12 +95,14 @@ class main:
         
         obje = Nutrition_Information_api(params=params)
         obje.url_maker()
-        obje.data_taker()
+        obje.datas_taker()
         
         datas = obje.clear_data_maker()
         self.data_writter_func(datas=datas,params=obje.params)     
         
-        self.panel
+        time.sleep(3)
+        
+        self.panel()
     
     
     def Popular_Destinations(self):
@@ -85,7 +117,9 @@ class main:
         datas = obje.clear_data_maker()
         self.data_writter_func(datas=datas,params=obje.params)
         
-        self.panel
+        time.sleep(3)
+        
+        self.panel()
 
 
     def Courses(self):
@@ -100,9 +134,10 @@ class main:
         datas = obje.clear_data_maker()
         self.data_writter_func(datas=datas,params=obje.params)
         
+        time.sleep(3)
         
-        self.panel
+        self.panel()
 
 x = main(param_taker_func=param_taker , domain_setter_func= domain_setter , data_writter_func= data_writer)
-
+x.panel()
 

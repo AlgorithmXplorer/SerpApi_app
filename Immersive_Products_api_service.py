@@ -22,44 +22,34 @@ class Immersive_Products_API:
         self.datas = js.dumps(datas,indent=4)
 
     def clear_data_maker(self):
-        clear_versions = []
         
-        try:
-            datas = js.loads(self.datas)["immersive_products"]
-        except KeyError:
+        datas = js.loads(self.datas)["organic_results"]
+        params = []
+        for data in datas:
+            str_params = []
             try:
-                datas = js.loads(self.datas)["shopping_results"]
-            except KeyError:
-                datas = js.loads(self.datas)["organic_results"]
-                for product in datas:
-                    str_infos = product["title"] + "\n"
-                    try:
-                        str_infos = str_infos + f"PRİCE: {product['rich_snippet']['price']}{product['rich_snippet']['currency']}" + "\n"
-                    except KeyError:
-                        str_infos = str_infos + f"PRİCE: UNKNOW"+ "\n"
-                    try:
-                        str_infos = str_infos + f"RATİNG: {product['rating']}" + "\n"
-                    except KeyError:
-                        str_infos = str_infos + f"RATİNG: UNKNOW"+ "\n"
-                    str_infos = str_infos + f"SOURCE: {product['source']}"
-                    clear_versions.append(str_infos)
-                    return f"\n{'-'*40}\n".join(clear_versions)
-
-
-        for product in datas:
-            str_infos = product["title"] + "\n"
+                str_params.append(f"Title : {data['title']}")
+            except:
+                str_params.append(f"Title : UNKNOWN")
+            
             try:
-                str_infos = str_infos + f"PRİCE: {product['price']}" + "\n"
-            except KeyError:
-                str_infos = str_infos + f"PRİCE: UNKNOW"+ "\n"
+                str_params.append(f"Description : {data['snipper']}")
+            except:
+                str_params.append(f"Description : UNKNOWN")
+            
             try:
-                str_infos = str_infos + f"RATİNG: {product['rating']}" + "\n"
-            except KeyError:
-                str_infos = str_infos + f"RATİNG: UNKNOW"+ "\n"
-            str_infos = str_infos + f"SOURCE: {product['source']}"
-            clear_versions.append(str_infos)
-
-        return f"\n\n{'-'*40}\n\n".join(clear_versions)
-
+                str_params.append(f"Source : {data['source']}")
+            except:
+                str_params.append(f"Source : UNKNOWN")
+            
+            try:
+                str_params.append(f"Link : {data['link']}")
+            except:
+                str_params.append(f"Link : UNKNOWN")
+            params.append(str_params)
+            
+        params = ["\n".join(list_data) for list_data in params]
+        clear_data = f"\n\n{'-' * 40}\n\n".join(params)
+        return clear_data
         
 
