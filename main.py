@@ -1,4 +1,5 @@
 import time
+import os
 
 from file_funcs import *
 from parameter_bringer import *
@@ -26,6 +27,7 @@ class main:
         elif choice not in [str(i) for i in list(range(1,7)) ]:
             with open("error.txt","w",encoding="utf-8") as file:
                 file.write("PLEASE ENTER YOUR CHOİCE CORRECTLY")
+            os.system("error.txt")
             self.panel()
 
         elif choice == "1":
