@@ -2,9 +2,9 @@
 
 ---
 ## ![a.png](IMAGES/a.png) CONTENTS
- ### [ **_Description_** ](#dpng-description)
- ### [ **_Usage_** ](#cpng-usage)
- ### [ **_THIRD PARTY LICENSES_** ](#bpng-third-party-licenses)
+### - [Description](#dpng-description)
+### - [Usage](#cpng-usage)
+### - [THIRD PARTY LICENSES](#bpng-third-party-licenses)
 
 
 ---
