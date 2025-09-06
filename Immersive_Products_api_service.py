@@ -9,7 +9,7 @@ class Immersive_Products_API:
         self.datas = None
     
     def url_maker(self):
-        with open("api_key/api.json","r+",encoding="utf-8") as file:
+        with open("jsons/api.json","r+",encoding="utf-8") as file:
             datas = js.load(file)
 
         str_params = [f"{name}={param}" for name,param in self.params.items()]

@@ -5,7 +5,7 @@ import time
 
 
 def domain_setter(code:str,only_country=False):
-    with open("google-domains.json","r+",encoding="utf-8") as file:
+    with open("jsons/google-domains.json","r+",encoding="utf-8") as file:
         countrys = js.load(file)
 
     for country in countrys:
@@ -69,6 +69,7 @@ def data_writer(datas:str, params:dict):
     with open("temp_file.txt","w",encoding="utf-8") as file:
         file.write(message)
         file.write(datas)
+    os.system("temp_file.txt")
     
 
 

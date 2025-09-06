@@ -12,7 +12,7 @@ class Jobs_apı:
         self.job_count:int = job_count
 
     def url_maker(self):
-        with open("api_key/api.json","r+",encoding="utf-8") as file: 
+        with open("jsons/api.json","r+",encoding="utf-8") as file: 
             url_datas = js.load(file)
         url = url_datas["url"]
         url += f"api_key={ url_datas['api_key'] }&" 
