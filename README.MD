@@ -3,7 +3,8 @@
 ---
 ## ![a.png](IMAGES/a.png) CONTENTS
 ### - [Description](#dpng-description)
-### - [Usage](#cpng-usage)
+### - [Setup](#cpng-setup)
+### - [Usage](#fpng-usage)
 ### - [THIRD PARTY LICENSES](#bpng-third-party-licenses)<br>
 
 ---
@@ -15,15 +16,12 @@ However, this doesn't mean it's useless. It can be a helpful project depending o
 For example, by looking at the API service files in the project, you can better understand how the SerpApi service works or even learn something new about using API services.
 
 ---
-## ![f.png](IMAGES/f.png) Main Goal
 
-
----
-## ![c.png](IMAGES/c.png) Usage
+## ![c.png](IMAGES/c.png) Setup
 1. Step:
-Create a profile on the [**SerpApi website**](https://serpapi.com/). Get an API key from the account you created<br><br>
+Create a profile on the [**SerpApi website**](https://serpapi.com/). Get an API key from the account you created<br><br><br>
 2. Step:
-Clone the folder named "**jsons**" inside the repo. Write your API key information into the "**api.json**" file inside the cloned folder.<br><br>
+Clone the folder named "**jsons**" inside the repo. Write your API key information into the "**api.json**" file inside the cloned folder.<br><br><br>
 3. Step:
 Install the PyInstaller module on your computer.
 ```
@@ -51,7 +49,7 @@ main.py
 <br>
 
 6. Step:
-A folder named "dist" will be created inside your folder. Inside it, you will find the .exe file of our application.<br><br>
+A folder named "dist" will be created inside your folder. Inside it, you will find the .exe file of our application.<br><br><br>
 
 7. Step:
 Put the folder named "**jsons**" into the same location as this .exe file. Don’t forget Step 2.  <br><br>
@@ -59,6 +57,19 @@ Put the folder named "**jsons**" into the same location as this .exe file. Don�
 ### Note: Don’t forget to install the other third-party software
 
 ---
+## ![f.png](IMAGES/f.png) Usage
+After completing the steps in the Installation section, run the generated .exe file.
+
+- A text file named "questions" will appear. From this file, you can choose the API service you want to use.
+
+- Based on your API selection, the requested data will be generated in a text file named "temp_file" and as a list.
+
+- After closing the "temp_file", you will return to the panel file.
+
+- If you want to exit the application, simply press the "q" key.
+
+---
+
 ## ![b.png](IMAGES/b.png) THIRD PARTY LICENSES
 
 ### ![e.png](IMAGES/e.png) [Requets](https://pypi.org/project/requests/)
