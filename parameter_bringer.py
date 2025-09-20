@@ -1,6 +1,11 @@
 
 countrys_url = "https://serpapi.com/google-domains"
-    
+
+#!NOTE: EACH PARAMETER FUNCTION IS SPECIFIC TO THAT SERVICE. THESE PARAMETERS SHOULD BE CHECKED THROUGH "https://serpapi.com/".
+
+#!NOTE2: EACH PARAMETER FUNCTION WORKS WITH THE SAME LOGIC:
+#!      WITH THE 2 FUNCTIONS IT RECEIVES, IT OBTAINS THE REQUIRED DATA FOR THE PARAMETER AND OUTPUTS THEM.
+#!      IN ADDITION, FOR SOME SERVICES, A COUNT VALUE IS ALSO REQUIRED. COUNT FUNCTIONS WORK WITH THE SAME LOGIC; THEY TAKE A FUNCTION, FETCH DATA THROUGH THAT FUNCTION, AND OUTPUT IT AS A PARAMETER.
 
 def Immersive_Products_param_taker(param_taker , domain_setter) -> dict:
     questions = ["What product do you want to search ",f"Which country will be use(country codes-dont write dot-;{countrys_url}) "]
@@ -28,7 +33,7 @@ def Jobs_param_taker(param_taker , domain_setter ) -> dict:
         "device":"desktop"
         }
     return params
-def job_count(param_taker):
+def job_count(param_taker) -> int:
     questions = ["How many jobs do you want to recive "]
     answer = param_taker(questions=questions)
     return int(answer[0])
@@ -72,7 +77,7 @@ def Popular_Destinations_parameters(param_taker , domain_setter ) -> dict:
         "device":"desktop"
         }
     return params
-def count_Destination(param_taker):
+def count_Destination(param_taker) -> int:
     datas = param_taker(questions=["how many destination do you want "])
     return int(datas[0])
 
@@ -89,7 +94,7 @@ def Courses_param_taker(param_taker, domain_setter ) -> dict:
         "device":"desktop"
         }
     return params
-def course_count(param_taker):
+def course_count(param_taker) -> int:
     answer = param_taker(questions = ["How many course do you want "])
     return int(answer[0])
 
