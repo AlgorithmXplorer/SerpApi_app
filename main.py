@@ -4,6 +4,7 @@ import os
 from file_funcs import *
 from parameter_bringer import *
 
+#* The API service classes used in the application are imported.
 from Immersive_Products_api_service import *
 from Jobs_API_service import *
 from News_api_service import *
@@ -12,24 +13,34 @@ from Popular_Destinations_api_service import *
 from courses_API_service import *
 
 class main:
+
+    #!NOTE: EACH SERVICE FUNCTION HAS ITS OWN EXECUTION METHOD. YOU CAN UNDERSTAND THIS METHOD BY LOOKING AT THE FUNCTION'S FILE.
+
+    #* For the "main" class, only 3 main functions are required, and they are taken as parameters. These functions are then used in the API service functions.
     def __init__(self,param_taker_func , domain_setter_func , data_writter_func):
         self.param_taker_func = param_taker_func
         self.data_writter_func = data_writter_func
         self.domain_setter_func = domain_setter_func
 
+    #* The main function where the coordination of the application is managed.
     def panel(self):
+
+        #* The service options are sent as a single string value because the selection data will be taken from one place only.
         panel_questions = "1-Immersive Products API service \n2-Jobs API service \n3-News API service\n4-Nutrition Information API service\n5-Popular Destinations API service\n6-Courses API service\nWhich api service do you want(Enter 'q' if you want to quit the app) "
         choice = str(self.param_taker_func(questions=[panel_questions])[-1])
 
+        #* If the selection is "q", the application will end.
         if choice == "q":
             print("QUİTİNG THE APP")
 
+        #* If the selection is not one of the specified options, an "error.txt" file will be executed
         elif choice not in [str(i) for i in list(range(1,7)) ]:
             with open("error.txt","w",encoding="utf-8") as file:
                 file.write("PLEASE ENTER YOUR CHOİCE CORRECTLY")
             os.system("error.txt")
             self.panel()
 
+        #* According to the given selection, the service functions are executed.
         elif choice == "1":
             self.Immersive_Products()
         elif choice == "2":
@@ -43,7 +54,6 @@ class main:
         elif choice == "6":
             self.Courses()
 
-        
 
     def Immersive_Products(self):
         params = Immersive_Products_param_taker(self.param_taker_func , self.domain_setter_func)
